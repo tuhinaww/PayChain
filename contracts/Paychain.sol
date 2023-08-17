@@ -86,7 +86,28 @@ function addHistory(address sender, address reciever, uint256 _amount, string me
         newRecieve.otherPartyName = names[sender].name;
     }
     history[reciever].push(newRecieve);
+}
+//get all requests
+function getMyRequests(address _user) public view returns(
+    address[] memory,
+    uint256[] memory,
+    string[] memory,
+    string[] memory
+){
+    address[] memory addrs = new address[](requests[_user].length);
+    uint256[] memory amnt = new uint256[](requests[_user].length);
+    string[] memory msge = new string[](requests[_user].length);
+    string[] memory nme = new string[](requests[_user].length);
 
+    for(uint i = 0; i < requests[_user].length; i++){
+        request storage myRequests = requests[_user][i];
+        addrs[i] = myRequests.requestor;
+        amnt[i] = myRequests.amount;
+        msge[i] = myRequests.message;
+        nme[i] = myRequests.name;
+    }
+    return(addrs, amnt, msge, nme);
+    }
 
 }
 
