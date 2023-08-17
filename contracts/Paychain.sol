@@ -60,9 +60,21 @@ function payRequest(uint256 _request) public payable {
     require(msg.value == (toPay), "Pay Correct Amount");
 
     payable(payableRequest.requestor).transfer(msg.value);
-    
+
     myRequests[_request] = myRequests[myRequests.length-1];
     myRequests.pop();
+}
+function addHistory(address sender, address reciever, uint256 _amount, string memory _message) private {
+    sendRecieve memory newSend;
+    newSend.action = "-"; //losing fund
+    newSend.amount = _amount;
+    newSend.message = _message;
+    newSend.otherPartyAddress = reciever;
+    if(names[reciever].hasName){
+        newSend.otherParttName = names[reciever].name;
+    }
+    history[sender].push(newSend);
+
 }
 
 }
