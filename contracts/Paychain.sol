@@ -22,7 +22,7 @@ struct sendRecieve {
     uint256 amount;
     string message;
     address otherPartyAddress;
-    string otherParttName;
+    string otherPartyName;
 }
 struct userName{
     string name;
@@ -61,6 +61,8 @@ function payRequest(uint256 _request) public payable {
 
     payable(payableRequest.requestor).transfer(msg.value);
 
+    addHistory(msg.sender, payableRequest.requestor, payableRequest.amount, payableRequest.message);
+
     myRequests[_request] = myRequests[myRequests.length-1];
     myRequests.pop();
 }
@@ -71,9 +73,20 @@ function addHistory(address sender, address reciever, uint256 _amount, string me
     newSend.message = _message;
     newSend.otherPartyAddress = reciever;
     if(names[reciever].hasName){
-        newSend.otherParttName = names[reciever].name;
+        newSend.otherPartyName = names[reciever].name;
     }
     history[sender].push(newSend);
+
+    sendRecieve memory newRecieve;
+    newRecieve.action = "+"; //gaining fund
+    newRecieve.amount = _amount;
+    newRecieve.message = _message;
+    newRecieve.otherPartyAddress = sender;
+    if(names[sender].hasName){
+        newRecieve.otherPartyName = names[sender].name;
+    }
+    history[reciever].push(newRecieve);
+
 
 }
 
