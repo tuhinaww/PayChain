@@ -108,7 +108,15 @@ function getMyRequests(address _user) public view returns(
     }
     return(addrs, amnt, msge, nme);
     }
+//get all history
 
+function getMyHistory(address _user) public view returns(sendRecieve[] memory){
+    return history[_user];
+}
+
+function getMyName(address _user) public view returns(userName memory){
+    return names[_user];
 }
 
 }
+
