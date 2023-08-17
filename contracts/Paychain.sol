@@ -32,5 +32,12 @@ mapping(address => userName) names;
 mapping(address => request[]) requests;
 mapping(address => sendRecieve[]) history;
 
+//add a name to wallet address
+function addName(string memory _name) public {
+    //function in solidity
+    userName storage newUserName = names[msg.sender];
+    newUserName.name = _name;
+    newUserName.hasName = true;
+}
 
 }
