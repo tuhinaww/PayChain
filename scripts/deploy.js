@@ -1,7 +1,7 @@
 const hre = require("hardhat");
 
 async function main() {
-  const Paychain = await hre.ethers.deployContract("Paychain");
+  const Paychain = await hre.ethers.getContractFactory("Paychain");
   const paychain = await Paychain.deploy();
   await paychain.deployed();
   console.log("Paychain deployed to:", paychain.address);
