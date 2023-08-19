@@ -27,3 +27,14 @@ To get started with PayChain, follow these steps:
    ```bash
    git clone https://github.com/tuhinaww/PayChain.git
    cd PayChain
+2. **Install Dependencies:** After navigating to the cloned repository directory, install the required dependencies using:
+
+```bash
+npm i
+```
+3. **Run PayChain:** Once the dependencies are installed, start PayChain using:
+
+```bash
+npm run start
+```
+### Now you're ready to experience the magic of PayChain and make your MATIC transactions seamless and secure.
