@@ -1,5 +1,5 @@
 const express = require("express");
-const Moralis = require("moralis").default;
+const payc = require("payc").default;
 const app = express();
 const cors = require("cors");
 require("dotenv").config();
@@ -12,13 +12,15 @@ app.use(express.json());
 
 app.get("/getNameAndBalance", async (req, res) => {
 
+
+
   return res.status(200).json({});
 });
 
 
 
-Moralis.start({
-  apiKey: process.env.MORALIS_KEY,
+payc.start({
+  apiKey: process.env.PAY_KEY,
 }).then(() => {
   app.listen(port, () => {
     console.log(`Listening for API Calls`);
