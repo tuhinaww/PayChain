@@ -18,6 +18,12 @@ Tired of the delays and inefficiencies associated with conventional payment meth
 
 - **Integrated MATIC Ecosystem:** Join a thriving ecosystem where your payments seamlessly meld with others, composing a harmonious symphony of financial interactions.
 
-## Get Started
+## Getting Started
 
-Whether you're an experienced practitioner of the arcane arts, a valiant warrior, or an astute individual, PayChain offers an unparalleled solution for making MATIC transactions as seamless as the most refined spell. Dive into the decentralized frontier today and experience the enchantment of MATIC's magic firsthand.
+To get started with PayChain, follow these steps:
+
+1. **Clone the Repository:** Open your terminal and enter the following command to clone the PayChain repository to your local machine:
+
+   ```bash
+   git clone https://github.com/tuhinaww/PayChain.git
+   cd PayChain
