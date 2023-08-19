@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.ant-card {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px !important;
+}
