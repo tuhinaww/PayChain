@@ -1,5 +1,5 @@
-require("@nomicfoundation/hardhat-waffle");
-require("@nomicfoundation/hardhat-etherscan");
+require("@nomiclabs/hardhat-etherscan");
+require("@nomiclabs/hardhat-waffle");
 const dotenv = require("dotenv");
 
 dotenv.config();
