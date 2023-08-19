@@ -1,15 +1,10 @@
 const hre = require("hardhat");
 
 async function main() {
-  const lock = await hre.ethers.deployContract("Paychain");
-
-  await Paychain.waitForDeployment();
-
-  console.log(
-    `Paychain deployed to ${ethers.formatEther(
-      lockedAmount
-    )}ETH and unlock timestamp ${unlockTime} deployed to ${lock.target}`
-  );
+  const Paychain = await hre.ethers.deployContract("Paychain");
+  const paychain = await Paychain.deploy();
+  await paychain.deployed();
+  console.log("Paychain deployed to:", paychain.address);
 }
 
 main().catch((error) => {
