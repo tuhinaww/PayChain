@@ -24,6 +24,8 @@ To get started with PayChain, follow these steps:
 
    ```bash
    git clone https://github.com/tuhinaww/PayChain.git
+   ```
+   ```bash
    cd PayChain
    ```
 2. **Install Dependencies:** After navigating to the cloned repository directory, install the required dependencies using:
