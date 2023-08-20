@@ -8,4 +8,8 @@ typechain-types
 Hardhat files
 cache
 artifacts
+scripts
+test
+package-lock.json
+package.json
 
